@@ -32,7 +32,7 @@ namespace WinSearchDBAnalyzer
             return fstream.Length;
         }
 
-        public byte[] readByteDump(int offset, int len)
+        public byte[] readByteDump(long offset, int len)
         {
 
             fstream.Seek(offset, SeekOrigin.Begin);
@@ -68,7 +68,7 @@ namespace WinSearchDBAnalyzer
             return i;
         }
 
-        public int readInt(int offset)
+        public int readInt(long offset)
         {
             byte[] bytes = readByteDump(offset, 4);
             int i = BitConverter.ToInt32(bytes, 0);

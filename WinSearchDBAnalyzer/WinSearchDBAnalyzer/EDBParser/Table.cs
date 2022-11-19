@@ -75,13 +75,13 @@ namespace WinSearchDBAnalyzer.EDBParser
 
         public int getPageFlags(int pageNumber)
         {
-            int offset = (pageNumber + 1) * this.pagesize + OFFSET_PAGEFLAG;
+            long offset = (pageNumber + 1) * (long)this.pagesize + OFFSET_PAGEFLAG;
             return this.hexReader.readInt(offset);
         }
 
         public int getPrePageNumber(int pageNumber)
         {
-            int offset = (pageNumber + 1) * this.pagesize + OFFSET_PREPAGENUMBER;
+            long offset = (pageNumber + 1) * (long)this.pagesize + OFFSET_PREPAGENUMBER;
             return this.hexReader.readInt(offset);
         }
 
